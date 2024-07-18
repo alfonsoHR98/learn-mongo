@@ -1,0 +1,11 @@
+use("genesis_store");
+
+db.products.insertOne({
+  name: "Product 1",
+  price: 799.99,
+});
+
+db.products.insertOne({
+  name: "Product 2",
+  price: 699.99,
+});
