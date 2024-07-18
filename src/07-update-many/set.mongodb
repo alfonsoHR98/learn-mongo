@@ -1,0 +1,40 @@
+use("sample_training");
+
+// $set
+// In this exercise, you will add a new field to all the zip codes in Cleveland.
+db.zips.updateMany(
+  // Query
+  { city: "CLEVELAND" },
+  // Update - operators
+  {
+    $set: {
+      myAttr: "IDontKnow"
+    },
+  }
+);
+
+// $rename
+// In this exercise, you will rename the field myAttr to myAttribute in all the zip codes in Cleveland.
+db.zips.updateMany(
+  // Query
+  { city: "CLEVELAND" },
+  // Update - operators
+  {
+    $rename: {
+      myAttr: "myAttribute"
+    },
+  }
+);
+
+// $unset
+// In this exercise, you will remove the field myAttribute from all the zip codes in Cleveland.
+db.zips.updateMany(
+  // Query
+  { city: "CLEVELAND" },
+  // Update - operators
+  {
+    $unset: {
+      myAttribute: ""
+    },
+  }
+);

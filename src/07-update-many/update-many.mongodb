@@ -1,0 +1,13 @@
+use("sample_training");
+
+// In this exercise, you will update the population of all the zip codes in Cleveland by adding 1000 to each.
+db.zips.updateMany(
+  // Query
+  { city: "CLEVELAND" },
+  // Update - operators
+  {
+    $inc: {
+      pop: 1000
+    }
+  }
+)
