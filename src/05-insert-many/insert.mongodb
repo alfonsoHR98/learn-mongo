@@ -1,0 +1,32 @@
+use("genesis_store");
+
+// Elimina todos los documentos de la colección
+db.products.drop()
+
+db.products.insertMany([
+  {
+    name: "Product 1",
+    price: 799.99,
+  },
+  {
+    name: "Product 2",
+    price: 699.99,
+  },
+  {
+    name: "Product 3",
+    price: 599.99,
+  },
+  {
+    name: "Product 4",
+    price: 499.99,
+  },
+  {
+    name: "Product 5",
+    price: 399.99,
+  }
+], {
+  // Se salta los documentos que ya existen
+  ordered: false
+})
+
+db.products.find()
