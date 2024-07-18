@@ -1,0 +1,13 @@
+use("genesis_store");
+
+db.products.updateOne(
+  // Query
+  { _id: 1 },
+  // change => operator
+  {
+    $set: {
+      price: 899.99,
+      tags: ["a", "b", "c"]
+    }
+  }
+)

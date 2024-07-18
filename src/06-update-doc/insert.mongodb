@@ -5,18 +5,22 @@ db.products.drop()
 
 db.products.insertMany([
   {
+    _id: 1,
     name: "Product 1",
     price: 799.99,
   },
   {
+    _id: 2,
     name: "Product 2",
     price: 699.99,
   },
   {
+    _id: 3,
     name: "Product 3",
     price: 599.99,
   },
   {
+    _id: 4,
     name: "Product 4",
     price: 499.99,
   },
@@ -24,6 +28,9 @@ db.products.insertMany([
     name: "Product 5",
     price: 399.99,
   }
-])
+], {
+  // Se salta los documentos que ya existen
+  ordered: false
+})
 
 db.products.find()

@@ -1,0 +1,12 @@
+use("genesis_store");
+
+db.products.updateOne(
+  {
+    _id: ObjectId('66999a936fd5b98a3f888213')
+  },
+  {
+    $inc: {
+      price: 1
+    }
+  }
+)

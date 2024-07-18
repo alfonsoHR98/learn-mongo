@@ -1,0 +1,13 @@
+use("genesis_store");
+
+db.products.updateOne(
+  // Query
+  { _id: 1 },
+  // change => operator
+  {
+    // Incrementa el precio
+    $inc: {
+      price: 899.99
+    }
+  }
+)
