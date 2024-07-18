@@ -1,0 +1,29 @@
+use("genesis_store")
+
+// Agrega un elemento al final del array
+db.inventory.updateOne(
+  // Query
+  { _id: 4 },
+  // change => operator
+  {
+    // Agrega un elemento al final del array
+    $push: {
+      tags: "headphone"
+    }
+  }
+)
+
+// Agregar varios elementos al final del array
+db.inventory.updateOne(
+  // Query
+  { _id: 4 },
+  // change => operator
+  {
+    // Agrega un elemento al final del array
+    $push: {
+      tags: {
+        $each: ["electronics", "school"]
+      }
+    }
+  }
+)

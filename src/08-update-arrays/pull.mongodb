@@ -1,0 +1,55 @@
+use("genesis_store");
+
+// Elimina un elemento del array
+db.inventory.updateOne(
+  // Query
+  { _id: 4 },
+  // change => operator
+  {
+    // Elimina un elemento del array
+    $pull: {
+      tags: "headphone",
+    },
+  }
+);
+
+// Elimina varios elementos del array
+db.inventory.updateOne(
+  // Query
+  { _id: 4 },
+  // change => operator
+  {
+    // Elimina un elemento del array
+    $pull: {
+      tags: {
+        $in: ["electronics", "school"],
+      },
+    },
+  }
+);
+
+// Elimina de varios documentos un elemento del array
+db.inventory.updateMany(
+  // Query
+  { tags: "school" },
+  // change => operator
+  {
+    // Elimina un elemento del array
+    $pull: {
+      tags: "school",
+    },
+  }
+);
+
+// Elimina de todos los documentos un elemento del array
+db.inventory.updateMany(
+  // Query
+  {},
+  // change => operator
+  {
+    // Elimina un elemento del array
+    $pull: {
+      tags: "book",
+    },
+  }
+);
