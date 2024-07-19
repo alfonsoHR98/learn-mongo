@@ -1,0 +1,28 @@
+use("genesis_store");
+
+// db.iot.insertOne({
+//   sensor: "A001",
+//   date: "2022-01-03",
+//   readings: [1, 2, 3, 4],
+// })
+
+// elimina el último elemento del array readings
+db.iot.updateOne(
+  {
+    sensor: "A001",
+    date: "2022-01-03",
+  },
+  {
+    $pop: { readings: 1 },
+  }
+);
+
+// agrega un elemento al array readings
+db.iot.updateOne(
+  { sensor: "A001", date: "2022-01-03" },
+  {
+    $push: { readings: 5 },
+  }
+);
+
+db.iot.find();

@@ -1,0 +1,14 @@
+use("genesis_store");
+
+db.iot.updateOne(
+  {
+    sensor: "A001",
+    date: "2022-01-04",
+  },
+  {
+    $push: { readings: 9 },
+  },
+  { upsert: true }
+);
+
+db.iot.find();
