@@ -1,0 +1,15 @@
+use("genesis_store");
+
+// Búsquedas explicitas
+
+// $eq => Equal
+db.inventory.find({ qty: { $eq: 20 } });
+
+// Búsqueda en subdocumentos
+db.inventory.find({ "item.code": { $eq: "123" } });
+
+// $ne => Not Equal
+db.inventory.find({ qty: { $ne: 20 } });
+
+// Búsqueda en subdocumentos
+db.inventory.find({ "item.code": { $ne: "123" } });

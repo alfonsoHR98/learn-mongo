@@ -1,0 +1,11 @@
+use("genesis_store");
+
+// Actualiza todos los documentos cuyo campo qty no sea igual a 20
+db.inventory.updateMany(
+  { qty: { $ne: 20 } },
+  {
+    $inc: {
+      qty: 10
+    }
+  }
+);
