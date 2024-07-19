@@ -1,0 +1,35 @@
+use("genesis_store");
+
+// $gt (>) y $gte (>=)
+// (greater than y greater than or equal)
+
+// $gt
+db.inventory.find({ qty: { $gt: 20 } });
+
+// $gte
+db.inventory.find({ qty: { $gte: 20 } });
+
+// $lt (<) y $lte (<=)
+// (less than y less than or equal)
+
+// $lt
+db.inventory.find({ qty: { $lt: 20 } });
+
+// $lte
+db.inventory.find({ qty: { $lte: 20 } });
+
+// join
+// $and
+db.inventory.find({ qty: { $gte: 25, $lte: 35 } });
+
+// Buscar por un rango de valores y que el campo item.code sea igual a 123
+db.inventory.find({
+  "item.code": "123",
+  qty: { $gte: 20, $lte: 25 },
+});
+
+// Buscar por un rango de valores y que el campo item.code sea diferente a 123
+db.inventory.find({
+  "item.code": { $ne: "123" },
+  qty: { $gte: 20, $lte: 25 },
+});
