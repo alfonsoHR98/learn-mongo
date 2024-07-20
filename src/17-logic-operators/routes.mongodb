@@ -1,0 +1,13 @@
+use("sample_training");
+
+// Buscar todas las rutas que tengan un avión de tipo E70
+// db.routes.find({ airplane: "E70" });
+
+// Buscar todas las rutas que tengan un avión de tipo E70 y que tengan un src_airport de tipo "BOG"
+// db.routes.find({
+//   $or: [{ dst_airport: "BOG" }, { src_airport: "BOG" }],
+// }).count();
+
+db.routes.find({
+  $and: [{ airplane: "E70" }, { $or: [{ dst_airport: "BOG" }, { src_airport: "BOG" }] }],
+}).count();
