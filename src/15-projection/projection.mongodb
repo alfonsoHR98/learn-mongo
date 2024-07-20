@@ -1,0 +1,13 @@
+use("sample_training");
+
+// Busca los documentos cuyo campo tripduration sea mayor o igual a 500 y proyecta solo los campos tripduration y usertype
+db.trips.find(
+  // query
+  { tripduration: { $gte: 500 } },
+
+  // projection
+  {
+    tripduration: 1,
+    usertype: 1, 
+  }
+);
