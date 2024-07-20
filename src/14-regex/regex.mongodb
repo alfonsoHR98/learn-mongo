@@ -1,0 +1,19 @@
+use("genesis_store");
+
+// db.inventory.find({ "item.description": "Single line description." });
+
+// Busca en las descripciones de los items que contengan la palabra "line"
+// db.inventory.find({ "item.description": { $regex: /line/ } });
+
+// Busca en las descripciones de los items que contengan la palabra "line" sin importar mayúsculas o minúsculas
+// db.inventory.find({ "item.description": { $regex: /LINE/i } });
+
+// Busca en las descripciones de los items que terminen con la palabra "line" sin importar mayúsculas o minúsculas
+// db.inventory.find({ "item.description": { $regex: /line$/i } });
+
+// Busca en las descripciones de los items que comiencen con la palabra "single" sin importar mayúsculas o minúsculas
+// db.inventory.find({ "item.description": { $regex: /^single/i } });
+
+// Busca en las descripciones de los items que contengan la palabra "line" sin importar mayúsculas o minúsculas y multilínea
+db.inventory.find({ "item.description": { $regex: /^s/im } });
+
