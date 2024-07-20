@@ -1,0 +1,44 @@
+use("genesis_store");
+
+// $in ===> Valores & Arrays
+
+// Busqueda de documentos que contengan los valores 20 o 25 en el campo qty
+// db.inventory.find({ qty: { $in: [20, 25] } });
+
+// Busqueda de documentos que contengan los valores "school" o "book" en el campo tags
+// db.inventory.find({ tags: { $in: ["electronics", "book"] } });
+
+// $nin ===> Valores & Arrays
+
+// Busqueda de documentos que no contengan los valores 20 o 25 en el campo qty
+// db.inventory.find({ qty: { $nin: [20, 25] } });
+
+// Busqueda de documentos que no contengan los valores "school" o "book" en el campo tags
+// db.inventory.find({ tags: { $nin: ["electronics", "book"] } });
+
+// $all ===> Arrays
+
+// Busqueda de documentos que contengan todos los valores "school" y "book" en el campo tags
+// db.inventory.find({ tags: { $all: ["school", "book"] } });
+
+// $size ===> Arrays
+
+// Busqueda de documentos que contengan un array de tamaño 2 en el campo tags
+// db.inventory.find({ tags: { $size: 2 } });
+
+// $elemMatch ===> Arrays
+
+// Busqueda de documentos que contengan un array con un objeto que contenga el campo product con el valor "xyz"
+// db.survey.find({ results: { $elemMatch: { product: "xyz" } } });
+
+// Busqueda de documentos que contengan un array con un objeto que contenga el campo product con el valor "xyz" y el campo score con un valor mayor o igual a 7
+db.survey.find({
+  results: {
+    $elemMatch: {
+      product: "xyz",
+      score: {
+        $gte: 7,
+      },
+    },
+  },
+});
