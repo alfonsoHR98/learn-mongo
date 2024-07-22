@@ -1,0 +1,6 @@
+use("genesis_store")
+
+// Pagination
+// skip: 0 - Element to start from
+// limit: 3 - Number of elements to return
+db.categories.find().skip(0).limit(3);

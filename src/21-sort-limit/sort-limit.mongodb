@@ -1,0 +1,15 @@
+use("sample_training");
+
+// SORT
+// 1: ascending 0 - 10 A - Z
+// -1: descending 10 - 0 Z - A
+db.zips
+  .find({
+    pop: {
+      $gte: 100,
+    },
+  })
+  .sort({
+    pop: 1,
+  })
+  .limit(5);
