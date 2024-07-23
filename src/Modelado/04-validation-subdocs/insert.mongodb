@@ -1,0 +1,10 @@
+use("genesis_store");
+
+db.products.insertOne({
+  name: 'Camisa',
+  sizes: ['S', 'M', 'L'],
+  category: {
+    name: 'Ropa',
+    image: ''
+  }
+})

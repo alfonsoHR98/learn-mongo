@@ -1,0 +1,40 @@
+use("genesis_store");
+
+db.createCollection("products", {
+  validator: {
+    $jsonSchema: {
+      bsonType: "object",
+      required: ["name"],
+      properties: {
+        name: {
+          bsonType: "string",
+        },
+        // Subdocument
+        sizes: {
+          // Array of strings
+          bsonType: "array",
+          // At least one item
+          minItems: 1,
+          // No repeated items
+          uniqueItems: true,
+          // Each item must be a string
+          items: {
+            bsonType: "string",
+          },
+        },
+        category: {
+          bsonType: "object",
+          required: ["name"],
+          properties: {
+            name: {
+              bsonType: "string",
+            },
+            image: {
+              bsonType: "string",
+            },
+          },
+        },
+      },
+    },
+  },
+});
