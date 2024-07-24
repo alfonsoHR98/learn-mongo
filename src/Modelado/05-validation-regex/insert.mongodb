@@ -1,0 +1,7 @@
+use("genesis_store");
+
+db.users.insertOne({
+  email: "a@a.a",
+  password: "123456APKibfsdjfsd",
+  role: "admin",
+});
