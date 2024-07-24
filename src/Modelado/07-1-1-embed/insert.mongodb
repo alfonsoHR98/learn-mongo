@@ -1,0 +1,24 @@
+use("genesis_store");
+
+db.users.insertOne({
+  email: "a@a.a",
+  password: "123456APKibfsdjfsd",
+  role: "admin",
+  social_accounts: [
+    "facebook",
+    "twitter",
+    "instagram"
+  ],
+  address: {
+    street: "1234 Main St",
+    city: "Springfield",
+    state: "IL",
+    zip: "62701"
+  },
+  shipping_address: {
+    street: "1234 Main St",
+    city: "Springfield",
+    state: "TX",
+    zip: "62702"
+  }
+});
