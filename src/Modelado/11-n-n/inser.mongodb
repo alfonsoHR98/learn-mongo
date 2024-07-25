@@ -1,0 +1,19 @@
+use("genesis_store");
+
+db.products.insertMany([
+  {
+    name: "Producto 1",
+    sizes: ["S", "M", "L"],
+    price: 100,
+  },
+  {
+    name: "Producto 2",
+    sizes: ["S", "L"],
+    price: 200,
+  },
+  {
+    name: "Producto 3",
+    sizes: ["M"],
+    price: 300,
+  },
+]);

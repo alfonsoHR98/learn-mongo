@@ -1,0 +1,12 @@
+use("genesis_store");
+
+db.stores.insertMany([
+  {
+    name: "Tienda 1",
+    products_ids: [ObjectId("66a2a9ce9174d00d6b9f4859"), ObjectId("66a2a9ce9174d00d6b9f485a")],
+  },
+  {
+    name: "Tienda 2",
+    products_ids: [ObjectId("66a2a9ce9174d00d6b9f485a"), ObjectId("66a2a9ce9174d00d6b9f485b")],
+  },
+]);
