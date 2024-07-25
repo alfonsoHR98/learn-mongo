@@ -1,0 +1,7 @@
+use("genesis_store");
+
+db.products.find()
+
+db.orders.find({
+  _id: ObjectId("66a2d7b3a7bb80863f66d54b"),
+});
