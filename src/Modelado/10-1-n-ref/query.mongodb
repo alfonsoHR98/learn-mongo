@@ -1,0 +1,23 @@
+use("genesis_store");
+
+// db.orders.find({ "items.qty": { $lte: 3 } });
+
+db.orders.find({ user_id: ObjectId("66a29b7a12f961a14cc715c4") }).count();
+
+// db.users.find()
+
+db.orders.aggregate([
+  {
+    $match: {
+      _id: ObjectId("66a29f223ea91a85bc80726d"),
+    },
+  },
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user",
+    },
+  },
+]);

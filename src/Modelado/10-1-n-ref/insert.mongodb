@@ -1,0 +1,18 @@
+use("genesis_store");
+
+db.orders.insertOne({
+  user_id: ObjectId("66a29b7a12f961a14cc715c4"),
+  date: "2021-01-01",
+  items: [
+    {
+      name: "Zapatos",
+      price: 220,
+      qty: 3,
+    },
+    {
+      name: "Camisa",
+      price: 270,
+      qty: 2,
+    },
+  ],
+});

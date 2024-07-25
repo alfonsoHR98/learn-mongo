@@ -1,7 +1,7 @@
 use("genesis_store");
 
 db.users.insertOne({
-  last_name: "Doe",
+  last_name: "Lopez",
   email: "a@a.a",
   password: "123456",
 })

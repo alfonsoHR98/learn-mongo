@@ -1,24 +1,5 @@
 use("genesis_store");
 
-// db.stores.drop();
-
-// db.orders.insertOne({
-//   user_id: ObjectId("66a154c1815b8b4343b2ba7f"),
-//   date: "2021-01-01",
-//   items: [
-//     {
-//       name: "Camisa",
-//       price: 100,
-//       qty: 2
-//     },
-//     {
-//       name: "Pantalon",
-//       price: 200,
-//       qty: 1
-//     }
-//   ]
-// });
-
 db.orders.insertOne({
   user_id: ObjectId("66a154c1815b8b4343b2ba7f"),
   date: "2021-01-01",
