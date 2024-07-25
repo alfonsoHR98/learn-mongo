@@ -1,0 +1,3 @@
+use("genesis_store");
+
+db.orders.find({ "items.qty": { $lte: 3 } });
