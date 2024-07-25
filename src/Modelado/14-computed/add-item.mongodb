@@ -1,0 +1,22 @@
+use("genesis_store");
+
+db.orders.updateOne(
+  {
+    _id: ObjectId("66a2da116b33a4f851c90a0f"),
+  },
+  {
+    $push: {
+      items: {
+        name: "Producto 3",
+        price: 300,
+        qty: 2,
+        product_id: ObjectId("66a2a9ce9174d00d6b9f485b"),
+      },
+    },
+    $inc: {
+      total: 300 * 2,
+    },
+  }
+);
+
+// 66a2da116b33a4f851c90a0f

@@ -1,0 +1,10 @@
+use("genesis_store");
+
+db.orders.insertOne({
+  user_id: ObjectId("66a29b7a12f961a14cc715c4"),
+  date: "2021-01-01",
+  total: 0,
+  items: [],
+});
+
+// 66a2da116b33a4f851c90a0f
