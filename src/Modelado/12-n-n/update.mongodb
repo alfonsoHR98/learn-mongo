@@ -1,0 +1,12 @@
+use("genesis_store");
+
+db.products.updateOne(
+  {
+    _id: ObjectId("66a2a9ce9174d00d6b9f485a"),
+  },
+  {
+    $set: {
+      stores_ids: [ObjectId("66a15863530b4e1fddc3aba2")],
+    },
+  }
+);

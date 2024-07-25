@@ -1,0 +1,18 @@
+use("genesis_store");
+
+db.products.find()
+db.stores.find()
+
+//66a2a9ce9174d00d6b9f485a => Product id
+//66a15863530b4e1fddc3aba2 => Store id
+
+db.products.aggregate([
+  {
+    $lookup: {
+      from: "stores",
+      localField: "stores_ids",
+      foreignField: "_id",
+      as: "stores",
+    }
+  }
+])
